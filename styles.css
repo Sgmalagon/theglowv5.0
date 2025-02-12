@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color:black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Efecto de luz en el logo */
+.logo img {
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0px 4px 10px rgba(255, 255, 255, 0.2));
+    animation: glowEffect 2s infinite alternate;
+}
+
+@keyframes glowEffect {
+    0% { filter: drop-shadow(0px 4px 10px rgba(255, 255, 255, 0.2)); }
+    100% { filter: drop-shadow(0px 6px 15px rgba(255, 255, 255, 0.5)); }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Separación entre los botones */
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 15px;
+    color: white;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efecto de luz en los botones */
+@keyframes pulse {
+    0% { box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1); }
+    100% { box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3); }
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #555, #333);
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 220px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
